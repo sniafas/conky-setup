@@ -1,0 +1,95 @@
+conky.config = {
+    background = true,
+    cpu_avg_samples = 12,
+    update_interval = 1,
+    double_buffer = true,
+    no_buffers = true,
+    imlib_cache_size = 10,
+    gap_x = 1530,
+    gap_y = 70,
+    minimum_size = '100',
+    maximum_width = 380,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+    border_inner_margin = 0,
+    border_outer_margin = 0,
+    own_window_argb_visual = true,
+    draw_shades = false,
+    default_shade_color = 'AAAAAA',
+    draw_outline = false,
+    default_outline_color = 'AAAAAA',
+    draw_borders = false,
+    draw_graph_borders = false,
+    default_graph_size = '40 80',
+    show_graph_scale = false,
+    show_graph_range = false,
+    use_xft = true,
+    xftalpha = 0,
+    xftfont = 'Droid Sans:size=50',
+    text_buffer_size = 256,
+    override_utf8_locale = true,
+    short_units = true,
+    pad_percents = 2,
+    top_name_width = 7,
+    default_color = 'DCDCDC',
+    color1 = 'DCDCDC',
+    color2 = 'DCDCDC',
+    color3 = 'DCDCDC',
+    color4 = 'F9F9F9',
+    color5 = 'D64937',
+    color6 = '888888',
+    color7 = '484848',
+    color8 = '2D2D2D',
+    lua_load = './seamod_rings.lua',
+    lua_draw_hook_post = 'main'
+}
+
+conky.text = [[
+${font Ubuntu:size=10:bold}${color3}SYSTEM${hr 2}
+${voffset 2}${font StyleBats:size=16}${font}Kernel:${offset 15}${font Ubuntu:size=10:normal}${color1}$sysname $kernel
+${offset 78}${font Ubuntu:size=10:normal}${color1}Uptime: $uptime
+${offset 78}Cpu_Temp: ${execi 6 /usr/bin/sensors | grep Package\ id\ 0| paste -s | cut -c16-19,17-20}
+${offset 78}SSD_Temp: ${execi 6 /usr/bin/sensors | grep Composite: | paste -s | cut -c16-19,17-20}
+${offset 78}Fan1: ${execi 6 /usr/bin/sensors | grep fan1: | paste -s | cut -c16-19,14-22}
+${offset 78}Fan2: ${execi 6 /usr/bin/sensors | grep fan2: | paste -s | cut -c16-19,14-22}
+#####################
+# Showing CPU Graph
+${font Ubuntu:size=10:bold}${color3}CPU ${hr 2}
+
+${offset 190}${cpugraph 60,100 666666 666666}
+${voffset 3}
+# Showing TOP 4 CPU-consumers
+${offset 115}${font Ubuntu:size=9:normal} ${top name 1}:${top cpu 1}%${alignr}
+${offset 115}${font Ubuntu:size=9:normal} ${top name 2}:${top cpu 2}%${alignr}
+${offset 115}${font Ubuntu:size=9:normal} ${top name 3}:${top cpu 3}%${alignr}
+${offset 115}${font Ubuntu:size=9:normal} ${top name 4}:${top cpu 4}%${alignr}
+${offset 115}${font Ubuntu:size=9:normal} ${top name 5}:${top cpu 5}%${alignr}
+#Showing memory part with TOP 4
+${font Ubuntu:size=10:bold}${color3}RAM ${hr 2}
+
+
+${offset 135}${font Ubuntu:size=10:bold}${color5}MEM ${offset 70}${color1}$mem / $memmax
+${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 1}${alignr}${top_mem mem 1}%
+${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 2}${alignr}${top_mem mem 2}%
+${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 3}${alignr}${top_mem mem 3}%
+${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
+
+
+# Showing disk partitions: root, home and Data
+${font Ubuntu:size=10:bold}${color3}STORAGE${hr 2}
+
+${voffset 60}
+${offset 180}${diskiograph 33,183 555555 aaaaaa}${voffset -30}
+${voffset 20}
+${offset 15}Disk I/O: ${diskio} 
+${offset 15}${font Ubuntu:size=11:bold}${color1}Root: ${font Ubuntu:size=11:normal}${fs_used /} / ${font Ubuntu:size=11:normal}${fs_size /}
+${offset 15}${font Ubuntu:size=11:bold}${color1}Swap: ${font Ubuntu:size=11:normal}${fs_used  /dev/nvme0n1p4} / ${font Ubuntu:size=11:normal}${fs_size /dev/nvme0n1p4}
+
+${font Ubuntu:size=10:bold}${color3}NETWORK${hr 2}
+${voffset 70}
+${offset 170}${font Ubuntu:size=9:bold}Downrate: ${downspeed wlp59s0} / ${totaldown wlp59s0}
+${offset 170}${color1}${font Ubuntu:size=9:bold}Uprate: ${upspeed enx74782796902f} / ${totalup enx74782796902f}${alignr}${upspeedgraph enx74782796902f 30,140 FF FF 1024}
+]]
