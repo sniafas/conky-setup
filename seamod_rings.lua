@@ -574,7 +574,7 @@ function draw_gauge_ring(display, data, value)
     local caption_fg_colour, caption_fg_alpha = data['caption_fg_colour'], data['caption_fg_alpha']
     local tox = graph_radius * (math.cos((graph_start_angle * 2 * math.pi / 360)-(math.pi/2)))
     local toy = graph_radius * (math.sin((graph_start_angle * 2 * math.pi / 360)-(math.pi/2)))
-    cairo_select_font_face (display, "Ubuntu", CAIRO_FONT_SLANT_NORMAL, caption_weight);
+    cairo_select_font_face (display, "Arimo", CAIRO_FONT_SLANT_NORMAL, caption_weight);
     cairo_set_font_size (display, caption_size)
     cairo_set_source_rgba (display, rgb_to_r_g_b(caption_fg_colour, caption_fg_alpha))
     cairo_move_to (display, x + tox + 5, y + toy + 1)

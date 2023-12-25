@@ -48,51 +48,51 @@ conky.config = {
 }
 
 conky.text = [[
-${font Ubuntu:size=14:bold}${color3}SYSTEM ${hr 2}
-${voffset 2}${font StyleBats:size=16}${font}Kernel:${offset 15}${font Ubuntu:size=10:normal}${color1}$sysname $kernel
-${offset 60}${font Ubuntu:size=10:normal}${color1}Uptime: $uptime
+${font Arimo:size=14:bold}${color3}SYSTEM ${hr 2}
+${voffset 2}${font StyleBats:size=16}${font}Kernel:${offset 15}${font Arimo:size=10:normal}${color1}$sysname $kernel
+${offset 60}${font Arimo:size=10:normal}${color1}Uptime: $uptime
 ${offset 60}CPU Temp: ${execi 6 /usr/bin/sensors | grep Package | paste -s | cut -c17-20} °C
 ${offset 60}Disk Temp: ${execi 6 /usr/bin/sensors | grep Composite | paste -s | cut -c16-19} °C
 
 # Showing CPU Graph
-${font Ubuntu:size=10:bold}${color3}CPU ${hr 2}
+${font Arimo:size=10:bold}${color3}CPU ${hr 2}
 ${offset 140}${cpugraph 40,183 666666 666666}
 ${voffset -10}
 
 # Showing TOP 4 CPU-consumers
-${offset 185}${font Ubuntu:size=9:normal} ${top name 1}:${top cpu 1}%${alignr}
-${offset 185}${font Ubuntu:size=9:normal} ${top name 2}:${top cpu 2}%${alignr}
-${offset 185}${font Ubuntu:size=9:normal} ${top name 3}:${top cpu 3}%${alignr}
-${offset 185}${font Ubuntu:size=9:normal} ${top name 4}:${top cpu 4}%${alignr}
+${offset 185}${font Arimo:size=9:normal} ${top name 1}:${top cpu 1}%${alignr}
+${offset 185}${font Arimo:size=9:normal} ${top name 2}:${top cpu 2}%${alignr}
+${offset 185}${font Arimo:size=9:normal} ${top name 3}:${top cpu 3}%${alignr}
+${offset 185}${font Arimo:size=9:normal} ${top name 4}:${top cpu 4}%${alignr}
 
 
 #Showing memory part with TOP 4
 ${voffset -30}
-${font Ubuntu:size=10:bold}${color3}RAM ${hr 2}
+${font Arimo:size=10:bold}${color3}RAM ${hr 2}
 
 ${voffset 25}
-${offset 135}${font Ubuntu:size=10:bold}${color5}MEM ${offset 70}${color1}$mem / $memmax
-${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 1}${alignr}${top_mem mem 1}%
-${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 2}${alignr}${top_mem mem 2}%
-${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 3}${alignr}${top_mem mem 3}%
-${offset 135}${font Ubuntu:size=10:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
+${offset 135}${font Arimo:size=10:bold}${color5}MEM ${offset 70}${color1}$mem / $memmax
+${offset 135}${font Arimo:size=10:normal}${color3}${top_mem name 1}${alignr}${top_mem mem 1}%
+${offset 135}${font Arimo:size=10:normal}${color3}${top_mem name 2}${alignr}${top_mem mem 2}%
+${offset 135}${font Arimo:size=10:normal}${color3}${top_mem name 3}${alignr}${top_mem mem 3}%
+${offset 135}${font Arimo:size=10:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
 
 
 # Showing disk partitions: root, home and Data
 ${voffset -30}
-${font Ubuntu:size=10:bold}${color3}STORAGE${hr 2}
+${font Arimo:size=10:bold}${color3}STORAGE${hr 2}
 
 ${voffset 80}
 ${offset 180}${diskiograph 33,183 555555 aaaaaa}${voffset -30}
 
 ${voffset 30}
 ${offset 15}Disk I/O: ${diskio} 
-${offset 15}${font Ubuntu:size=11:bold}${color1}Root: ${font Ubuntu:size=11:normal}${fs_used /} / ${font Ubuntu:size=11:normal}${fs_size /} 
-${offset 15}${font Ubuntu:size=11:bold}${color1}Home: ${font Ubuntu:size=11:normal}${fs_used /home} / ${font Ubuntu:size=11:normal}${fs_size /home}
-${offset 15}${font Ubuntu:size=11:bold}${color1}Data4T: ${font Ubuntu:size=11:normal}${fs_used /media/steve/Data4T} / ${font Ubuntu:size=11:normal}${fs_size /media/steve/Data4T} 
-${offset 15}${font Ubuntu:size=11:bold}${color1}Data: ${font Ubuntu:size=11:normal}${fs_used /media/steve/Data} / ${font Ubuntu:size=11:normal}${fs_size /media/steve/Data}
-${offset 15}${font Ubuntu:size=11:bold}${color1}Backup: ${font Ubuntu:size=11:normal}${fs_used /media/steve/Backup} / ${font Ubuntu:size=11:normal}${fs_free /media/steve/Backup}
-${offset 15}${font Ubuntu:size=11:bold}${color1}Cache: ${font Ubuntu:size=11:normal}${fs_used /media/steve/Cache} / ${font Ubuntu:size=11:normal}${fs_free /media/steve/Cache}
-${offset 15}${font Ubuntu:size=11:bold}${color1}Win_Data: ${font Ubuntu:size=11:normal}${fs_used /media/steve/Win_Data} / ${font Ubuntu:size=11:normal}${fs_size /media/steve/Win_Data}
-${offset 15}${font Ubuntu:size=11:bold}${color1}FreeAgent: ${font Ubuntu:size=11:normal}${fs_used  /media/steve/FreeAgent Drive} / ${font Ubuntu:size=11:normal}${fs_size /media/steve/FreeAgent Drive}
+${offset 15}${font Arimo:size=11:bold}${color1}Root: ${font Arimo:size=11:normal}${fs_used /} / ${font Arimo:size=11:normal}${fs_size /} 
+${offset 15}${font Arimo:size=11:bold}${color1}Home: ${font Arimo:size=11:normal}${fs_used /home} / ${font Arimo:size=11:normal}${fs_size /home}
+${offset 15}${font Arimo:size=11:bold}${color1}Data4T: ${font Arimo:size=11:normal}${fs_used /media/steve/Data4T} / ${font Arimo:size=11:normal}${fs_size /media/steve/Data4T} 
+${offset 15}${font Arimo:size=11:bold}${color1}Data: ${font Arimo:size=11:normal}${fs_used /media/steve/Data} / ${font Arimo:size=11:normal}${fs_size /media/steve/Data}
+${offset 15}${font Arimo:size=11:bold}${color1}Backup: ${font Arimo:size=11:normal}${fs_used /media/steve/Backup} / ${font Arimo:size=11:normal}${fs_free /media/steve/Backup}
+${offset 15}${font Arimo:size=11:bold}${color1}Cache: ${font Arimo:size=11:normal}${fs_used /media/steve/Cache} / ${font Arimo:size=11:normal}${fs_free /media/steve/Cache}
+${offset 15}${font Arimo:size=11:bold}${color1}Win_Data: ${font Arimo:size=11:normal}${fs_used /media/steve/Win_Data} / ${font Arimo:size=11:normal}${fs_size /media/steve/Win_Data}
+${offset 15}${font Arimo:size=11:bold}${color1}FreeAgent: ${font Arimo:size=11:normal}${fs_used  /media/steve/FreeAgent Drive} / ${font Arimo:size=11:normal}${fs_size /media/steve/FreeAgent Drive}
 ]]
