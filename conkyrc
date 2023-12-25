@@ -51,8 +51,8 @@ conky.text = [[
 ${font Ubuntu:size=14:bold}${color3}SYSTEM ${hr 2}
 ${voffset 2}${font StyleBats:size=16}${font}Kernel:${offset 15}${font Ubuntu:size=10:normal}${color1}$sysname $kernel
 ${offset 60}${font Ubuntu:size=10:normal}${color1}Uptime: $uptime
-${offset 60}Cpu_Temp: ${execi 6 /usr/bin/sensors | grep Core\ 3| paste -s | cut -c15-16,19-20}
-#${offset 60}HDD:${execi 10 hddtemp /dev/sdb |cut -c30-38}
+${offset 60}CPU Temp: ${execi 6 /usr/bin/sensors | grep Package | paste -s | cut -c17-20} °C
+${offset 60}Disk Temp: ${execi 6 /usr/bin/sensors | grep Composite | paste -s | cut -c16-19} °C
 
 # Showing CPU Graph
 ${font Ubuntu:size=10:bold}${color3}CPU ${hr 2}
